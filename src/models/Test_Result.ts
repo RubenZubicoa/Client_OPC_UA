@@ -4,7 +4,7 @@ import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 export class TestResult extends BaseEntity{
 
     @PrimaryGeneratedColumn()
-    Id:number;    
+    Id?:number;    
 
     @Column()
     Side:string;
@@ -66,6 +66,9 @@ export class TestResult extends BaseEntity{
     @Column('int')
     Button6_Value:number;
 
+    @Column('int')
+    Button7_Value:number
+
     @Column()
     Button7_State:string;
 
@@ -105,6 +108,9 @@ export class TestResult extends BaseEntity{
     @Column()
     Button13_State:string;
 
+    @Column()
+    TiempoCiclo:string;
+
     @Column("timestamp")
-    Date: Date;
+    Date?: Date;
 }
