@@ -76,7 +76,9 @@ export async function readPlc() {
         console.log('Numero de serie vacio');
         return;
       }
-      await TestResult.insert(result)
+      console.log(result.Button1_State);
+      console.log(result.Isri_Serial_Number);
+      await TestResult.insert(result);
       console.log('Datos introducidos correctamente');
     }
     
@@ -97,7 +99,7 @@ async function readData(session: ClientSession) {
   var Button12_Value: any = await readVariable('Button12_Value', session);
   var Button13_State: any = await readVariable('Button13_State', session);
   var Button13_Value: any = await readVariable('Button13_Value', session);
-  // var Button1_State: any = await readVariable('Button1_State', session);
+  var Button1_State: any = await readVariable('Button1_State', session);
   var Button1_Value: any = await readVariable('Button1_Value', session);
   var Button2_State: any = await readVariable('Button2_State', session);
   var Button2_Value: any = await readVariable('Button2_Value', session);
@@ -108,6 +110,7 @@ async function readData(session: ClientSession) {
   var Button5_State: any = await readVariable('Button5_State', session);
   var Button5_Value: any = await readVariable('Button5_Value', session);
   var Button6_Value: any = await readVariable('Button6_Value', session);
+  var Button6_State: any = await readVariable('Button6_State', session);
   var Button7_State: any = await readVariable('Button7_State', session);
   var Button7_Value: any = await readVariable('Button7_Value', session);
   var Button8_State: any = await readVariable('Button8_State', session);
@@ -134,7 +137,7 @@ async function readData(session: ClientSession) {
     Button12_Value,
     Button13_State,
     Button13_Value,
-    Button1_State:2,
+    Button1_State,
     Button1_Value,
     Button2_State,
     Button2_Value,
@@ -145,6 +148,7 @@ async function readData(session: ClientSession) {
     Button5_State,
     Button5_Value,
     Button6_Value,
+    Button6_State,
     Button7_State,
     Button7_Value,
     Button8_State,

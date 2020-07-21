@@ -66,6 +66,9 @@ export class TestResult extends BaseEntity{
     @Column('int')
     Button6_Value:number;
 
+    @Column()
+    Button6_State:string;
+
     @Column('int')
     Button7_Value:number
 
